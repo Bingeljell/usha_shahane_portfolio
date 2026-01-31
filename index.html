@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usha Shahane | Adolescent Counseling & Youth Mentoring</title>
+    <link href="./dist/output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="font-sans text-warm-gray bg-sand antialiased selection:bg-terracotta selection:text-white" x-data="{ mobileMenuOpen: false }">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 backdrop-blur-md bg-sand/90 border-b border-peach/30" 
+         x-data="{ scrolled: false }" 
+         @scroll.window="scrolled = (window.pageYOffset > 20)">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-serif text-2xl font-bold text-burgundy tracking-wide z-50 relative">Usha Shahane</a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#who" class="text-warm-gray hover:text-terracotta transition-colors text-sm uppercase tracking-wider">Who Is This For?</a>
+                <a href="#approach" class="text-warm-gray hover:text-terracotta transition-colors text-sm uppercase tracking-wider">Approach</a>
+                <a href="#about" class="text-warm-gray hover:text-terracotta transition-colors text-sm uppercase tracking-wider">About Me</a>
+                <a href="#contact" class="px-6 py-2 bg-burgundy text-white rounded-full hover:bg-terracotta transition-colors shadow-lg transform hover:-translate-y-0.5 text-sm font-semibold">Get in Touch</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden z-50 text-burgundy focus:outline-none relative">
+                <svg x-show="!mobileMenuOpen" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                <svg x-show="mobileMenuOpen" x-cloak class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+
+        <!-- Mobile Full Screen Menu -->
+        <div x-show="mobileMenuOpen" 
+             x-transition:enter="transition ease-out duration-200"
+             x-transition:enter-start="opacity-0 -translate-y-5"
+             x-transition:enter-end="opacity-100 translate-y-0"
+             x-transition:leave="transition ease-in duration-150"
+             x-transition:leave-start="opacity-100 translate-y-0"
+             x-transition:leave-end="opacity-0 -translate-y-5"
+             class="fixed inset-0 bg-sand z-40 flex flex-col items-center justify-center space-y-8 md:hidden text-center"
+             x-cloak>
+            <a @click="mobileMenuOpen = false" href="#who" class="font-serif text-3xl text-burgundy hover:text-terracotta">Who Is This For?</a>
+            <a @click="mobileMenuOpen = false" href="#approach" class="font-serif text-3xl text-burgundy hover:text-terracotta">Approach</a>
+            <a @click="mobileMenuOpen = false" href="#about" class="font-serif text-3xl text-burgundy hover:text-terracotta">About Me</a>
+            <a @click="mobileMenuOpen = false" href="#contact" class="px-8 py-3 bg-terracotta text-white rounded-full text-xl shadow-lg">Get in Touch</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative min-h-[90vh] flex items-center justify-center pt-28 pb-12 md:pt-20 overflow-hidden">
+        <!-- Background Blobs -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+            <div class="absolute top-1/4 -left-10 w-48 h-48 md:w-72 md:h-72 bg-peach rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-blob"></div>
+            <div class="absolute top-1/3 right-0 w-64 h-64 md:w-96 md:h-96 bg-terracotta/30 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+            <div class="absolute -bottom-32 left-1/3 w-60 h-60 md:w-80 md:h-80 bg-peach-light rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-blob animation-delay-4000"></div>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 md:gap-12 items-center">
+            <div class="space-y-6 relative z-10 order-1 md:order-1 text-center md:text-left">
+                <div class="inline-block px-3 py-1 bg-peach/50 rounded-full text-burgundy text-xs font-bold tracking-widest uppercase mb-2">Mental Wellness & Mentoring</div>
+                <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-burgundy leading-tight">
+                    Guiding the Next <span class="text-terracotta italic">Generation</span> with Resilience.
+                </h1>
+                <p class="text-base sm:text-lg md:text-xl text-warm-gray/80 max-w-lg mx-auto md:mx-0 leading-relaxed">
+                    Adolescent counseling and youth mentoring backed by four decades of diverse life experience.
+                </p>
+                <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#contact" class="px-8 py-3 bg-terracotta text-white text-center rounded-full font-semibold shadow-lg hover:bg-burgundy transition-all transform hover:scale-105 active:scale-95">
+                        Schedule Consultation
+                    </a>
+                    <a href="#about" class="px-8 py-3 border border-burgundy text-burgundy text-center rounded-full font-semibold hover:bg-burgundy hover:text-white transition-all">
+                        Meet Usha
+                    </a>
+                </div>
+            </div>
+            
+            <div class="relative order-2 md:order-2 px-4 md:px-0">
+                <div class="aspect-[4/5] md:aspect-square relative rounded-2xl overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500 bg-sand">
+                    <!-- Usha's Illustrated Photo -->
+                    <div class="w-full h-full flex items-center justify-center relative group">
+                        <div class="absolute inset-0 bg-gradient-warm opacity-10 group-hover:opacity-0 transition-opacity z-10"></div>
+                        <img src="./usha_illustrated_lowres.png" alt="Usha Shahane Illustration" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    </div>
+                </div>
+                <!-- Decorative element -->
+                <div class="absolute -bottom-6 -right-2 md:-right-6 w-16 h-16 md:w-24 md:h-24 bg-peach rounded-full -z-10 pattern-dots"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Who Is This For? -->
+    <section id="who" class="py-16 md:py-24 bg-white relative">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="font-serif text-3xl md:text-4xl text-burgundy mb-4">Who Is This For?</h2>
+                <div class="w-16 h-1 bg-terracotta mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 md:gap-8">
+                <!-- Card 1 -->
+                <div class="p-6 md:p-8 bg-sand rounded-2xl hover:shadow-xl transition-shadow group">
+                    <div class="w-12 h-12 bg-peach rounded-full flex items-center justify-center mb-4 md:mb-6 group-hover:bg-terracotta transition-colors">
+                        <svg class="w-6 h-6 text-burgundy group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="font-serif text-xl md:text-2xl text-burgundy mb-3">Young Adults (10-25)</h3>
+                    <p class="text-warm-gray leading-relaxed text-sm md:text-base">
+                        Navigating complex emotional landscapes, anxiety, identity, and the pressure to perform in an increasingly competitive world.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="p-6 md:p-8 bg-sand rounded-2xl hover:shadow-xl transition-shadow group">
+                    <div class="w-12 h-12 bg-peach rounded-full flex items-center justify-center mb-4 md:mb-6 group-hover:bg-terracotta transition-colors">
+                        <svg class="w-6 h-6 text-burgundy group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </div>
+                    <h3 class="font-serif text-xl md:text-2xl text-burgundy mb-3">Parents & Guardians</h3>
+                    <p class="text-warm-gray leading-relaxed text-sm md:text-base">
+                        Seeking a mentor who bridges the gap between you and your child, offering support that complements your parenting.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="p-6 md:p-8 bg-sand rounded-2xl hover:shadow-xl transition-shadow group">
+                    <div class="w-12 h-12 bg-peach rounded-full flex items-center justify-center mb-4 md:mb-6 group-hover:bg-terracotta transition-colors">
+                        <svg class="w-6 h-6 text-burgundy group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="font-serif text-xl md:text-2xl text-burgundy mb-3">Career Seekers</h3>
+                    <p class="text-warm-gray leading-relaxed text-sm md:text-base">
+                        Students needing clarity on career alignment, turning "interests" into actionable paths with confidence.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Approach -->
+    <section id="approach" class="py-16 md:py-24 bg-peach-light/50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+                <div class="order-2 md:order-1">
+                    <h2 class="font-serif text-3xl md:text-4xl text-burgundy mb-6">More Than Just Listening. <br>We Build <span class="text-terracotta">Capability.</span></h2>
+                    <p class="text-base md:text-lg text-warm-gray mb-8">
+                        My approach combines academic rigor with practical wisdom. We don't just talk about problems; we build the tools to solve them.
+                    </p>
+                    
+                    <ul class="space-y-6">
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 w-8 h-8 bg-terracotta rounded-full flex items-center justify-center text-white mr-4 mt-1 font-bold">1</span>
+                            <div>
+                                <h4 class="font-serif text-lg md:text-xl text-burgundy font-semibold">Resilience Building</h4>
+                                <p class="text-warm-gray text-sm mt-1">Moving forward after setbacks without forcing a timeline. Healing at your own pace.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 w-8 h-8 bg-terracotta rounded-full flex items-center justify-center text-white mr-4 mt-1 font-bold">2</span>
+                            <div>
+                                <h4 class="font-serif text-lg md:text-xl text-burgundy font-semibold">Self-Reliance</h4>
+                                <p class="text-warm-gray text-sm mt-1">Taking ownership of choices. Moving from "what others expect" to "what is right for me."</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 w-8 h-8 bg-terracotta rounded-full flex items-center justify-center text-white mr-4 mt-1 font-bold">3</span>
+                            <div>
+                                <h4 class="font-serif text-lg md:text-xl text-burgundy font-semibold">Holistic Growth</h4>
+                                <p class="text-warm-gray text-sm mt-1">Integrating psychological principles with spiritual wellness for a balanced life.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="order-1 md:order-2 relative px-8 md:px-0">
+                    <!-- Abstract Graphic representing Growth -->
+                    <div class="relative w-full aspect-square bg-white rounded-full shadow-inner flex items-center justify-center p-8">
+                        <div class="absolute inset-0 bg-gradient-warm opacity-10 rounded-full animate-pulse"></div>
+                        <div class="text-center p-4 md:p-8 border-4 border-peach/50 rounded-full h-full w-full flex flex-col items-center justify-center">
+                            <p class="font-serif text-xl md:text-3xl text-burgundy italic leading-tight">"You pushed me to step up instead of staying silent."</p>
+                            <span class="block mt-4 text-terracotta font-bold text-xs md:text-sm tracking-wide uppercase">- Student Testimonial</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-24 bg-white overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-10 md:gap-12">
+                <!-- Timeline/Bio Side -->
+                <div class="md:col-span-7 space-y-6 md:space-y-8">
+                    <h2 class="font-serif text-3xl md:text-4xl text-burgundy">From the Tenga Valley to <br class="hidden md:block">Mumbai Boardrooms.</h2>
+                    <div class="prose prose-base md:prose-lg text-warm-gray">
+                        <p>
+                            My professional trajectory is not linear—and that is my greatest strength. With a Master's in Sociology and extensive teaching experience at institutions like <strong>St. Xavier's</strong> and <strong>Sophia College</strong>, I understand the academic pressures of today.
+                        </p>
+                        <p>
+                            But life taught me more than books could. As an <strong>Army wife for 12 years</strong>, traversing from Punjab to Arunachal Pradesh, I learned the true meaning of adaptability and community service. I've witnessed the resilience of military families and the quiet strength needed to navigate change.
+                        </p>
+                        <p>
+                            Later, in the corporate world, I trained teams in <strong>Emotional Intelligence</strong>, helping professionals overcome psychological barriers. Today, I bring all these worlds together—academic, military, and corporate—to help youth navigate their own unique paths.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-3 md:gap-4 pt-4">
+                        <div class="p-3 md:p-4 bg-sand rounded-lg border border-peach text-center md:text-left">
+                            <span class="block text-xl md:text-2xl font-serif text-burgundy font-bold">40+</span>
+                            <span class="text-[10px] md:text-xs uppercase tracking-wide text-warm-gray">Years Experience</span>
+                        </div>
+                        <div class="p-3 md:p-4 bg-sand rounded-lg border border-peach text-center md:text-left">
+                            <span class="block text-xl md:text-2xl font-serif text-burgundy font-bold">MA</span>
+                            <span class="text-[10px] md:text-xs uppercase tracking-wide text-warm-gray">Sociology</span>
+                        </div>
+                        <div class="p-3 md:p-4 bg-sand rounded-lg border border-peach text-center md:text-left">
+                            <span class="block text-xl md:text-2xl font-serif text-burgundy font-bold">PG</span>
+                            <span class="text-[10px] md:text-xs uppercase tracking-wide text-warm-gray">Counseling</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Credentials Side -->
+                <div class="md:col-span-5 flex flex-col justify-center space-y-6">
+                    <div class="p-6 md:p-8 bg-burgundy text-peach-light rounded-2xl md:rounded-tr-3xl md:rounded-bl-3xl shadow-xl relative overflow-hidden">
+                        <div class="absolute -top-10 -right-10 w-40 h-40 bg-white opacity-5 rounded-full"></div>
+                        <h3 class="font-serif text-xl md:text-2xl mb-6 border-b border-white/20 pb-4">Credentials & Certifications</h3>
+                        <ul class="space-y-4 text-sm font-light tracking-wide">
+                            <li class="flex items-start">
+                                <span class="w-2 h-2 bg-terracotta rounded-full mr-3 mt-1.5 flex-shrink-0"></span>
+                                <span>PG Diploma in Counseling & Safeguarding (Sophia Centre)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="w-2 h-2 bg-terracotta rounded-full mr-3 mt-1.5 flex-shrink-0"></span>
+                                <span>Certification from J N Heredia Centre for Counseling</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="w-2 h-2 bg-terracotta rounded-full mr-3 mt-1.5 flex-shrink-0"></span>
+                                <span>Specialized in Adolescent Psychology</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="w-2 h-2 bg-terracotta rounded-full mr-3 mt-1.5 flex-shrink-0"></span>
+                                <span>3 Levels of Christian Counselling Programs</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials (Outcomes) -->
+    <section class="py-16 md:py-24 bg-gradient-to-br from-peach-light to-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="font-serif text-3xl md:text-4xl text-burgundy mb-2">Real Outcomes</h2>
+                <p class="text-warm-gray">The impact of our work together.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Outcome Card -->
+                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-terracotta">
+                    <h4 class="font-serif text-xl text-burgundy mb-2">Leadership</h4>
+                    <p class="text-sm text-warm-gray italic">"You pushed me to step up instead of staying silent or passive."</p>
+                </div>
+                
+                <!-- Outcome Card -->
+                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-terracotta">
+                    <h4 class="font-serif text-xl text-burgundy mb-2">Confidence</h4>
+                    <p class="text-sm text-warm-gray italic">"My English and confidence in speaking grew because of you."</p>
+                </div>
+
+                <!-- Outcome Card -->
+                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-terracotta">
+                    <h4 class="font-serif text-xl text-burgundy mb-2">Wisdom</h4>
+                    <p class="text-sm text-warm-gray italic">"The ability to differentiate good from bad decisions early on."</p>
+                </div>
+
+                <!-- Outcome Card -->
+                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-terracotta">
+                    <h4 class="font-serif text-xl text-burgundy mb-2">Self-Reliance</h4>
+                    <p class="text-sm text-warm-gray italic">"You taught me to take ownership of my choices."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Footer -->
+    <footer id="contact" class="bg-burgundy text-peach-light py-16 md:py-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==')] opacity-20"></div>
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <h2 class="font-serif text-3xl md:text-4xl mb-6">Ready to Start the Conversation?</h2>
+            <p class="text-lg md:text-xl mb-10 opacity-90 max-w-2xl mx-auto">
+                Whether you are a parent seeking guidance or a young adult looking for direction, I am here to help you navigate the path ahead.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-6 items-center">
+                <a href="mailto:contact@ushashahane.com" class="px-8 py-4 bg-terracotta text-white rounded-full font-bold shadow-lg hover:bg-peach hover:text-burgundy transition-all w-full sm:w-auto">
+                    Email Me
+                </a>
+                <span class="opacity-50 hidden sm:inline">or</span>
+                <a href="#" class="text-peach underline hover:text-white transition-colors">Connect on LinkedIn</a>
+            </div>
+
+            <div class="mt-16 md:mt-20 pt-8 border-t border-white/10 text-sm opacity-60">
+                &copy; 2026 Usha Shahane. All Rights Reserved. <br>
+                <span class="text-xs">Mumbai, India</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

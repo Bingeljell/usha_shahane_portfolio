@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@theme {
+  --color-terracotta: #E27D60;
+  --color-terracotta-dark: #C35C41;
+  --color-peach: #FAD0C4;
+  --color-peach-light: #FFF0EB;
+  --color-burgundy: #8E2800;
+  --color-sand: #FDF6E3;
+  --color-warm-gray: #4A403A;
+
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Lato", sans-serif;
+
+  --background-image-gradient-warm: linear-gradient(to bottom right, #FAD0C4, #E27D60);
+
+  --animate-blob: blob 7s infinite;
+
+  @keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+  }
+}
+
+@layer utilities {
+    .animation-delay-2000 {
+        animation-delay: 2s;
+    }
+    .animation-delay-4000 {
+        animation-delay: 4s;
+    }
+}
